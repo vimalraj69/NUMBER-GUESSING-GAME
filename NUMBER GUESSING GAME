@@ -1,0 +1,42 @@
+import java.util.Random;
+import java.util.Scanner;
+public class NumberGuessingGame {
+    public static void main(String ars[]){
+        Random r= new Random();
+        Scanner s= new Scanner(System.in);
+        int attempts =5;
+        int rNum= r.nextInt(101);
+        System.out.println(rNum);
+        System.out.println("You have "+attempts+" attempts");
+        System.out.println("Guess any number between 1-100:");
+
+        int Gnum=s.nextInt();
+        if(rNum==Gnum){
+            System.out.println("The Guessed number is correct that is "+rNum);
+            System.out.println("YOU WON!!!!!!!!");
+        }else {
+            while (rNum!=Gnum && attempts>1){
+                if(rNum<Gnum){
+                    System.out.println("Your guessed number is Bigger!");
+                    attempts--;
+                    System.out.println("You have "+attempts+" attempts");
+
+                }else {
+                    System.out.println("Your guessed number is Lower!");
+                    attempts--;
+                    System.out.println("You have "+attempts+" attempts");
+                }
+                Gnum=s.nextInt();
+            }
+            if(rNum==Gnum) {
+                System.out.println("The Guessed number is correct that is " + rNum);
+                System.out.println("YOU WON!!!!!!!!");
+            }else {
+                System.out.println("GAME OVER");
+            }
+        }
+
+
+
+    }
+}
